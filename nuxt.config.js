@@ -1,4 +1,3 @@
-
 export default {
   mode: 'spa',
   /*
@@ -34,7 +33,8 @@ export default {
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/composition-api/module'
   ],
   /*
   ** Nuxt.js modules
@@ -45,9 +45,12 @@ export default {
   ** Build configuration
   */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
+    babel: {
+      plugins: [
+        ['@babel/plugin-proposal-private-property-in-object', { loose: true }],
+        ['@babel/plugin-proposal-private-methods', { loose: true }]
+      ]
+    },
     extend (config, ctx) {
     }
   }
