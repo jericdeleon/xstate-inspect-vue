@@ -29,11 +29,21 @@
 </template>
 
 <script>
+import { useMachine } from 'xstate-vue2'
 import Logo from '~/components/Logo.vue'
+import { parentMachine } from '~/machines/parentMachine'
 
 export default {
   components: {
     Logo
+  },
+  setup () {
+    const { state, send } = useMachine(parentMachine, { devTools: true })
+
+    return {
+      state,
+      send
+    }
   }
 }
 </script>
