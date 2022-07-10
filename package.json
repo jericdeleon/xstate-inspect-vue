@@ -1,0 +1,30 @@
+{
+  "name": "xstate-inspect-vue",
+  "version": "1.0.0",
+  "description": "My magnificent Nuxt.js project",
+  "author": "Jeric de Leon",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "@nuxtjs/composition-api": "^0.32.0",
+    "@xstate/inspect": "^0.7.0",
+    "nuxt": "2.15.4",
+    "vue-server-renderer": "2.6.14",
+    "vue-template-compiler": "2.6.14",
+    "xstate": "^4.32.1",
+    "xstate-vue2": "^0.2.1"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^2.0.0",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2"
+  }
+}
