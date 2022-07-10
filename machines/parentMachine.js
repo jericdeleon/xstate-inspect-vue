@@ -10,6 +10,10 @@ export const parentMachine = createMachine({
   },
   states: {
     step_one: {
+      src: invokedMachine,
+      onDone: 'step_two'
+    },
+    step_two: {
       entry: assign({
         localOne: () => spawn(spawnedMachine)
       }),
@@ -17,12 +21,8 @@ export const parentMachine = createMachine({
         'LOCAL.WAKE': {
           actions: send({ type: 'WAKE' }, { to: context => context.localOne })
         },
-        'REMOTE.ONLINE': { target: 'step_two' }
+        'REMOTE.ONLINE': { target: 'step_three' }
       }
-    },
-    step_two: {
-      src: invokedMachine,
-      onDone: 'step_three'
     },
     step_three: {
       type: 'final'
